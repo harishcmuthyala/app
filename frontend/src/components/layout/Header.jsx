@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { navLinks } from '../../data/mock';
-import { Menu, X } from 'lucide-react';
+import { navLinks, profileData } from '../../data/mock';
+import { Menu, X, Download } from 'lucide-react';
 import { Button } from '../ui/button';
 
 const Header = () => {
