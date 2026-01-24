@@ -61,6 +61,16 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
+            <a
+              href={profileData.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-teal-400 transition-colors duration-300 text-sm font-medium relative group flex items-center gap-1"
+            >
+              <Download size={14} />
+              Resume
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full" />
+            </a>
             <Button
               onClick={() => scrollToSection('#contact')}
               className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25"
