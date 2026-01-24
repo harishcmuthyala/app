@@ -96,6 +96,82 @@ async def get_status_checks():
     
     return status_checks
 
+
+# ============ Contact Form Endpoints ============
+
+@api_router.post("/contact", response_model=ContactMessage)
+async def submit_contact_form(input: ContactMessageCreate):
+    """Submit a contact form message"""
+    try:
+        contact_obj = ContactMessage(**input.model_dump())
+        
+        # Convert to dict and serialize datetime to ISO string for MongoDB
+        doc = contact_obj.model_dump()
+        doc['created_at'] = doc['created_at'].isoformat()
+        
+        await db.contact_messages.insert_one(doc)
+        logger.info(f"New contact message from {input.email}: {input.subject}")
+        return contact_obj
+    except Exception as e:
+        logger.error(f"Error saving contact message: {e}")
+        raise HTTPException(status_code=500, detail="Failed to save message")
+
+
+@api_router.get("/contact", response_model=List[ContactMessage])
+async def get_contact_messages():
+    """Get all contact messages (for admin purposes)"""
+    messages = await db.contact_messages.find({}, {"_id": 0}).to_list(1000)
+    
+    for msg in messages:
+        if isinstance(msg.get('created_at'), str):
+            msg['created_at'] = datetime.fromisoformat(msg['created_at'])
+    
+    return messages
+
+
+# ============ Resume Download Tracking Endpoints ============
+
+@api_router.post("/resume/download")
+async def track_resume_download(user_agent: Optional[str] = None):
+    """Track when resume is downloaded"""
+    try:
+        download_obj = ResumeDownload(user_agent=user_agent)
+        
+        doc = download_obj.model_dump()
+        doc['downloaded_at'] = doc['downloaded_at'].isoformat()
+        
+        await db.resume_downloads.insert_one(doc)
+        
+        # Get total download count
+        count = await db.resume_downloads.count_documents({})
+        logger.info(f"Resume downloaded. Total downloads: {count}")
+        
+        return {"message": "Download tracked", "total_downloads": count}
+    except Exception as e:
+        logger.error(f"Error tracking resume download: {e}")
+        raise HTTPException(status_code=500, detail="Failed to track download")
+
+
+@api_router.get("/resume/stats")
+async def get_resume_stats():
+    """Get resume download statistics"""
+    try:
+        total_downloads = await db.resume_downloads.count_documents({})
+        
+        # Get recent downloads (last 30 days)
+        thirty_days_ago = datetime.now(timezone.utc).replace(day=1).isoformat()
+        recent_downloads = await db.resume_downloads.count_documents({
+            "downloaded_at": {"$gte": thirty_days_ago}
+        })
+        
+        return {
+            "total_downloads": total_downloads,
+            "recent_downloads": recent_downloads
+        }
+    except Exception as e:
+        logger.error(f"Error getting resume stats: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get stats")
+
 # Include the router in the main app
 app.include_router(api_router)
 
