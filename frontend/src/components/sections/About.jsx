@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { profileData, certificationsData } from '../../data/mock';
-import { Award, Cloud, GraduationCap, Briefcase, Code2, Brain } from 'lucide-react';
+import { Award, Cloud, GraduationCap, Briefcase, Code2, Brain, FileText, ExternalLink } from 'lucide-react';
 
 const iconMap = {
   Cloud: Cloud,
   Award: Award,
   GraduationCap: GraduationCap,
+  FileText: FileText,
 };
 
 const About = () => {
