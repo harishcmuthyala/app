@@ -83,18 +83,37 @@ const About = () => {
               <div className="grid gap-3">
                 {certificationsData.map((cert) => {
                   const IconComponent = iconMap[cert.icon] || Award;
-                  return (
+                  const content = (
+                    <>
+                      <div className="p-2 bg-teal-500/10 rounded-lg text-teal-400 group-hover:bg-teal-500/20 transition-colors duration-300">
+                        <IconComponent size={20} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white font-medium flex items-center gap-2">
+                          {cert.name}
+                          {cert.link && <ExternalLink size={14} className="text-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />}
+                        </h4>
+                        <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                      </div>
+                    </>
+                  );
+
+                  return cert.link ? (
+                    <a
+                      key={cert.id}
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-teal-500/30 transition-all duration-300 group cursor-pointer"
+                    >
+                      {content}
+                    </a>
+                  ) : (
                     <div
                       key={cert.id}
                       className="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-teal-500/30 transition-all duration-300 group"
                     >
-                      <div className="p-2 bg-teal-500/10 rounded-lg text-teal-400 group-hover:bg-teal-500/20 transition-colors duration-300">
-                        <IconComponent size={20} />
-                      </div>
-                      <div>
-                        <h4 className="text-white font-medium">{cert.name}</h4>
-                        <p className="text-gray-400 text-sm">{cert.issuer}</p>
-                      </div>
+                      {content}
                     </div>
                   );
                 })}
