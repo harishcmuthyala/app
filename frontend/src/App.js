@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -12,9 +13,10 @@ import Ideas from "./components/sections/Ideas";
 import Education from "./components/sections/Education";
 import Contact from "./components/sections/Contact";
 
-function App() {
+// Main Portfolio Page (public)
+const Portfolio = () => {
   return (
-    <div className="App bg-slate-950 min-h-screen">
+    <>
       <Header />
       <main>
         <Hero />
@@ -22,11 +24,36 @@ function App() {
         <Experience />
         <Projects />
         <Skills />
-        <Ideas />
         <Education />
         <Contact />
       </main>
       <Footer />
+    </>
+  );
+};
+
+// Secret Ideas Page (hidden, accessible via /ideas)
+const IdeasPage = () => {
+  return (
+    <>
+      <Header />
+      <main className="pt-20">
+        <Ideas />
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <div className="App bg-slate-950 min-h-screen">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/ideas" element={<IdeasPage />} />
+        </Routes>
+      </BrowserRouter>
       <Toaster position="bottom-right" richColors />
     </div>
   );
