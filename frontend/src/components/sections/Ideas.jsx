@@ -1,10 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Badge } from '../ui/badge';
-import { Lightbulb, Rocket, Brain, Globe, Smartphone, Shield, Zap, MessageSquare } from 'lucide-react';
+import { Lightbulb, Rocket, Brain, Globe, Smartphone, Shield, Zap, MessageSquare, Building2 } from 'lucide-react';
 
 const ideasData = [
   {
     id: 1,
+    title: "Legacy System Migration Framework",
+    problem: "Critical industries such as airlines and banking rely on legacy systems that have operated for decades and cannot be taken offline. Similar to Y2K, emerging shifts—such as data scale growth and future quantum-related security changes—expose hard-coded assumptions that require large-scale migration without downtime.",
+    solution: "A structured framework and consulting approach that works alongside existing systems rather than replacing them. The framework identifies data-size constraints, cryptographic and quantum-readiness gaps, and defines incremental, backward-compatible migration paths, enabling modernization while preserving continuous operations.",
+    icon: Building2,
+    category: "Enterprise",
+    status: "Research",
+    openToBuild: false
+  },
+  {
+    id: 2,
     title: "Local LLM Agent for Mobile",
     problem: "Cloud-based AI requires internet, raises privacy concerns, and has latency issues. Users can't leverage AI for personal data without uploading to external servers.",
     solution: "A local LLM running on-device that acts as a personal AI agent - answering questions about your local files, sending WhatsApp messages via voice commands, automating tasks without internet dependency.",
@@ -14,7 +24,7 @@ const ideasData = [
     openToBuild: true
   },
   {
-    id: 2,
+    id: 3,
     title: "Resume & Cover Letter AI Generator",
     problem: "Job seekers spend hours tailoring resumes and writing cover letters for each application. The process is repetitive and time-consuming.",
     solution: "An AI tool that takes a job description and existing resume as input, then generates a tailored cover letter and enhanced resume optimized for that specific role.",
@@ -24,7 +34,7 @@ const ideasData = [
     openToBuild: true
   },
   {
-    id: 3,
+    id: 4,
     title: "Instant Room-Based Data Sharing",
     problem: "Sharing text/links between devices requires apps, logins, or complicated setups. AirDrop is Apple-only, and other solutions are bloated.",
     solution: "A minimal mobile website where you enter a room code and instantly share text/links to anyone in that room. No accounts, no downloads - just simple, fast sharing.",
@@ -32,16 +42,6 @@ const ideasData = [
     category: "Utility",
     status: "Ready to Build",
     openToBuild: true
-  },
-  {
-    id: 4,
-    title: "Legacy System Migration Framework",
-    problem: "Critical industries (airlines, banking) run on 50+ year old systems. Similar to Y2K, upcoming shifts like quantum computing will require massive migrations without downtime.",
-    solution: "A systematic framework and consulting approach for migrating legacy systems - identifying byte-size limitations, quantum-readiness gaps, and providing incremental migration paths.",
-    icon: Globe,
-    category: "Enterprise",
-    status: "Research",
-    openToBuild: false
   },
   {
     id: 5,
