@@ -172,19 +172,29 @@ export const certificationsData = [
     id: 1,
     name: "AWS Solutions Architect - Associate",
     issuer: "Amazon Web Services",
-    icon: "Cloud"
+    icon: "Cloud",
+    link: "https://www.linkedin.com/posts/harish-muthyala_aws-certified-solutions-architect-associate-activity-7185641445817565184-Iujx"
   },
   {
     id: 2,
     name: "Accenture Trailblazer Award",
     issuer: "Accenture - FY24 Q1",
-    icon: "Award"
+    icon: "Award",
+    link: "https://www.linkedin.com/posts/harish-muthyala_trailblazer-activity-7168496550732554240-D8LT"
   },
   {
     id: 3,
+    name: "Featured in AWS Article",
+    issuer: "Amazon CodeWhisperer at Accenture",
+    icon: "FileText",
+    link: "https://www.linkedin.com/posts/nino-leenus-764455aa_how-accenture-is-using-amazon-codewhisperer-activity-7052485126248640512-d8-_"
+  },
+  {
+    id: 4,
     name: "Hawks Scholarship",
     issuer: "University of Houston",
-    icon: "GraduationCap"
+    icon: "GraduationCap",
+    link: null
   }
 ];
 
