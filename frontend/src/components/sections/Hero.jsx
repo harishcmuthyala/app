@@ -110,9 +110,6 @@ const Hero = () => {
                 Download Resume
               </Button>
             </div>
-                </Button>
-              </a>
-            </div>
           </div>
 
           {/* Profile Image */}
