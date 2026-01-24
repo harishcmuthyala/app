@@ -52,9 +52,9 @@ export const experienceData = [
     period: "Aug 2022 - Jan 2024",
     type: "past",
     highlights: [
-      "Deployed SageMaker Autopilot pipelines in secure VPC environments for telecom customer churn prediction",
-      "Implemented real-time model drift detection via SageMaker Model Monitor for proactive retraining",
-      "Automated migration of QuickSight Dashboards across AWS accounts, preserving dataset integrity"
+      "Deployed SageMaker Autopilot pipelines in secure VPC environments, supporting scalable API-based inference for enterprise clients",
+      "Implemented real-time model drift detection via SageMaker Model Monitor, enabling proactive model retraining strategies",
+      "Automated migration of QuickSight Dashboards across AWS accounts, preserving dataset integrity and improving reporting for analytics stakeholders"
     ]
   }
 ];
