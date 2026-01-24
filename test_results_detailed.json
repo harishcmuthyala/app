@@ -1,0 +1,76 @@
+[
+  {
+    "test": "Root Endpoint",
+    "success": true,
+    "message": "Root endpoint working correctly",
+    "response_data": {
+      "message": "Hello World"
+    },
+    "timestamp": "2026-01-24T03:15:15.846207"
+  },
+  {
+    "test": "Contact Form Submission",
+    "success": true,
+    "message": "Contact form submitted successfully",
+    "response_data": {
+      "id": "41fcba44-ab35-44bc-b625-eb1bb1051b48",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "subject": "Portfolio Inquiry",
+      "message": "I'm interested in your work and would like to discuss a potential project collaboration.",
+      "created_at": "2026-01-24T03:15:15.872661Z",
+      "is_read": false
+    },
+    "timestamp": "2026-01-24T03:15:15.891657"
+  },
+  {
+    "test": "Contact Validation - Invalid Email Test",
+    "success": true,
+    "message": "Validation correctly rejected invalid data",
+    "response_data": null,
+    "timestamp": "2026-01-24T03:15:15.904684"
+  },
+  {
+    "test": "Contact Validation - Empty Name Test",
+    "success": true,
+    "message": "Validation correctly rejected invalid data",
+    "response_data": null,
+    "timestamp": "2026-01-24T03:15:15.955306"
+  },
+  {
+    "test": "Contact Validation - Missing Fields Test",
+    "success": true,
+    "message": "Validation correctly rejected invalid data",
+    "response_data": null,
+    "timestamp": "2026-01-24T03:15:15.964190"
+  },
+  {
+    "test": "Get Contact Messages",
+    "success": true,
+    "message": "Retrieved 1 contact messages",
+    "response_data": {
+      "count": 1
+    },
+    "timestamp": "2026-01-24T03:15:15.975987"
+  },
+  {
+    "test": "Resume Download Tracking",
+    "success": true,
+    "message": "Download tracked successfully. Total downloads: 1",
+    "response_data": {
+      "message": "Download tracked",
+      "total_downloads": 1
+    },
+    "timestamp": "2026-01-24T03:15:16.034870"
+  },
+  {
+    "test": "Resume Stats",
+    "success": true,
+    "message": "Stats retrieved: 1 total, 1 recent",
+    "response_data": {
+      "total_downloads": 1,
+      "recent_downloads": 1
+    },
+    "timestamp": "2026-01-24T03:15:16.050370"
+  }
+]
