@@ -206,6 +206,5 @@ export const navLinks = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Ideas", href: "#ideas" },
   { name: "Contact", href: "#contact" }
 ];
