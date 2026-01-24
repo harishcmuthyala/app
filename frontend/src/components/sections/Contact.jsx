@@ -6,6 +6,10 @@ import { Textarea } from '../ui/textarea';
 import { Label } from '../ui/label';
 import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,18 +49,23 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (MOCK - will be replaced with backend)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      await axios.post(`${API}/contact`, formData);
+      
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      toast.success('Message sent successfully! I\'ll get back to you soon.');
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success('Message sent successfully! I\'ll get back to you soon.');
-
-    // Reset form after delay
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
+      // Reset form after delay
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      setIsSubmitting(false);
+      toast.error('Failed to send message. Please try again.');
+    }
   };
 
   const contactInfo = [
