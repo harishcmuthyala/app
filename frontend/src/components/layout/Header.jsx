@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { navLinks, profileData } from '../../data/mock';
 import { Menu, X, Download } from 'lucide-react';
 import { Button } from '../ui/button';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +24,19 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleResumeDownload = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${API}/resume/download`, null, {
+        params: { user_agent: navigator.userAgent }
+      });
+    } catch (error) {
+      console.error('Error tracking download:', error);
+    }
+    window.open(profileData.resumeUrl, '_blank');
     setIsMobileMenuOpen(false);
   };
 
