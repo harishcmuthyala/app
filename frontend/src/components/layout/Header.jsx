@@ -108,6 +108,15 @@ const Header = () => {
                 {link.name}
               </a>
             ))}
+            <a
+              href={profileData.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-300 hover:text-teal-400 transition-colors duration-300 text-sm font-medium py-2 flex items-center gap-2"
+            >
+              <Download size={14} />
+              Download Resume
+            </a>
             <Button
               onClick={() => scrollToSection('#contact')}
               className="w-full bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full"
