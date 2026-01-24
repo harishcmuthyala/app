@@ -126,9 +126,8 @@ const Header = () => {
             ))}
             <a
               href={profileData.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-300 hover:text-teal-400 transition-colors duration-300 text-sm font-medium py-2 flex items-center gap-2"
+              onClick={handleResumeDownload}
+              className="block text-gray-300 hover:text-teal-400 transition-colors duration-300 text-sm font-medium py-2 flex items-center gap-2 cursor-pointer"
             >
               <Download size={14} />
               Download Resume
