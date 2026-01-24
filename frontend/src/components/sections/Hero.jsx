@@ -101,18 +101,15 @@ const Hero = () => {
               >
                 Get In Touch
               </Button>
-              <a
-                href={profileData.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Harish_Muthyala_Resume.pdf"
+              <Button
+                variant="outline"
+                onClick={handleResumeDownload}
+                className="border-slate-600 text-gray-300 hover:bg-slate-800 hover:text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 flex items-center gap-2"
               >
-                <Button
-                  variant="outline"
-                  className="border-slate-600 text-gray-300 hover:bg-slate-800 hover:text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 flex items-center gap-2"
-                >
-                  <Download size={18} />
-                  Download Resume
+                <Download size={18} />
+                Download Resume
+              </Button>
+            </div>
                 </Button>
               </a>
             </div>
