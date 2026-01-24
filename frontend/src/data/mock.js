@@ -74,15 +74,16 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Model Context Protocol (MCP)",
-    description: "Comprehensive research and implementation on MCP architecture for LLM communication and context management.",
+    title: "LLM Performance & Efficiency Visualization",
+    description: "Interactive visualization project analyzing performance, efficiency, and environmental impact of Large Language Models to guide informed model selection.",
     details: [
-      "Conducted comprehensive research on MCP architecture for LLM communication",
-      "Implemented MCP client-server architecture enabling seamless LLM-application communication",
-      "Created implementation examples showcasing file creation and Google Maps integration"
+      "Analyzed model architectures (Llama, Qwen2, Mistral) across multiple benchmarks including IFEval, BBH, GPQA, MMLU, and MATH",
+      "Explored precision impact (float16 vs bfloat16) revealing bfloat16 performs better for most model types",
+      "Visualized CO2 emissions correlation with model performance, emphasizing responsible AI development",
+      "Demonstrated that architecture and design matter more than parameter count for model performance"
     ],
-    technologies: ["Python", "Claude", "Langchain", "Research"],
-    category: "AI/ML"
+    technologies: ["Python", "R", "Rawgraphs", "Data Visualization", "Hugging Face"],
+    category: "Research"
   },
   {
     id: 3,
@@ -98,19 +99,6 @@ export const projectsData = [
   },
   {
     id: 4,
-    title: "LLM Performance & Efficiency Visualization",
-    description: "Interactive visualization project analyzing performance, efficiency, and environmental impact of Large Language Models to guide informed model selection.",
-    details: [
-      "Analyzed model architectures (Llama, Qwen2, Mistral) across multiple benchmarks including IFEval, BBH, GPQA, MMLU, and MATH",
-      "Explored precision impact (float16 vs bfloat16) revealing bfloat16 performs better for most model types",
-      "Visualized CO2 emissions correlation with model performance, emphasizing responsible AI development",
-      "Demonstrated that architecture and design matter more than parameter count for model performance"
-    ],
-    technologies: ["Python", "R", "Rawgraphs", "Data Visualization", "Hugging Face"],
-    category: "Research"
-  },
-  {
-    id: 5,
     title: "MLOps Pipeline for Enterprise",
     description: "End-to-end ML pipeline with automated model training, deployment, and monitoring for enterprise-scale applications.",
     details: [
