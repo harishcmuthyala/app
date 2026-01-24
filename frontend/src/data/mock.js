@@ -83,7 +83,8 @@ export const projectsData = [
       "Demonstrated that architecture and design matter more than parameter count for model performance"
     ],
     technologies: ["Python", "R", "Rawgraphs", "Data Visualization", "Hugging Face"],
-    category: "Research"
+    category: "Research",
+    link: "https://www.linkedin.com/posts/harish-muthyala_visualization-on-large-language-models-activity-7419407994133770240-LeUy"
   },
   {
     id: 3,
