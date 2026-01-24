@@ -98,8 +98,21 @@ export const projectsData = [
   },
   {
     id: 4,
-    title: "Telecom Churn Prediction System",
-    description: "End-to-end ML pipeline for predicting customer churn in telecom industry with real-time monitoring.",
+    title: "LLM Performance & Efficiency Visualization",
+    description: "Interactive visualization project analyzing performance, efficiency, and environmental impact of Large Language Models to guide informed model selection.",
+    details: [
+      "Analyzed model architectures (Llama, Qwen2, Mistral) across multiple benchmarks including IFEval, BBH, GPQA, MMLU, and MATH",
+      "Explored precision impact (float16 vs bfloat16) revealing bfloat16 performs better for most model types",
+      "Visualized CO2 emissions correlation with model performance, emphasizing responsible AI development",
+      "Demonstrated that architecture and design matter more than parameter count for model performance"
+    ],
+    technologies: ["Python", "R", "Rawgraphs", "Data Visualization", "Hugging Face"],
+    category: "Research"
+  },
+  {
+    id: 5,
+    title: "MLOps Pipeline for Enterprise",
+    description: "End-to-end ML pipeline with automated model training, deployment, and monitoring for enterprise-scale applications.",
     details: [
       "Deployed SageMaker Autopilot in secure VPC environments",
       "Implemented real-time model drift detection",
