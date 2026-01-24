@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { profileData } from '../../data/mock';
 import { Button } from '../ui/button';
 import { ArrowDown, MapPin, Download, Sparkles } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,6 +19,19 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleResumeDownload = async () => {
+    try {
+      // Track the download
+      await axios.post(`${API}/resume/download`, null, {
+        params: { user_agent: navigator.userAgent }
+      });
+    } catch (error) {
+      console.error('Error tracking download:', error);
+    }
+    // Open the resume in a new tab regardless of tracking success
+    window.open(profileData.resumeUrl, '_blank');
   };
 
   return (
