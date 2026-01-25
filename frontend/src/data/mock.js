@@ -186,7 +186,7 @@ export const certificationsData = [
   },
   {
     id: 3,
-    name: "Featured in AWS Article",
+    name: "AWS Article",
     issuer: "Amazon CodeWhisperer at Accenture",
     icon: "FileText",
     link: "https://www.linkedin.com/posts/nino-leenus-764455aa_how-accenture-is-using-amazon-codewhisperer-activity-7052485126248640512-d8-_"
