@@ -10,7 +10,7 @@ export const profileData = {
   linkedin: "https://linkedin.com/in/harish-muthyala",
   github: "https://github.com/harishcmuthyala",
   profileImage: "https://customer-assets.emergentagent.com/job_e611e29c-5e13-4c3f-bd8d-8cbf16ab7906/artifacts/q110qoyq_1758485323492.png",
-  resumeUrl: "https://customer-assets.emergentagent.com/job_media-gallery-94/artifacts/h8jm2uca_Harish_Muthyala.pdf",
+  resumeUrl: "https://drive.google.com/file/d/1WUZ7mblC6kpxEDweOO_nNPhiNwWz_AwG/view",
   bio: "Machine Learning Engineer with 3+ years of experience designing and delivering cloud-native AI/ML solutions. Passionate about LLM Inference optimization and building production-grade Generative AI applications. AWS Certified Solutions Architect with a proven track record of transforming proof-of-concepts into impactful client solutions."
 };
 

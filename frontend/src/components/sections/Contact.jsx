@@ -6,10 +6,10 @@ import { Textarea } from '../ui/textarea';
 import { Label } from '../ui/label';
 import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
-import axios from 'axios';
+// import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+// const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,11 +50,15 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${API}/contact`, formData);
+      // await axios.post(`${API}/contact`, formData);
+      // Create mailto link
+      const mailtoLink = `mailto:${profileData.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      window.location.href = mailtoLink;
       
       setIsSubmitting(false);
       setIsSubmitted(true);
-      toast.success('Message sent successfully! I\'ll get back to you soon.');
+      // toast.success('Message sent successfully! I\'ll get back to you soon.');
+      toast.success('Opening your email client. Please send the message.');
 
       // Reset form after delay
       setTimeout(() => {
