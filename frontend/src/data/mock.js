@@ -10,7 +10,7 @@ export const profileData = {
   linkedin: "https://linkedin.com/in/harish-muthyala",
   github: "https://github.com/harishcmuthyala",
   profileImage: "https://customer-assets.emergentagent.com/job_e611e29c-5e13-4c3f-bd8d-8cbf16ab7906/artifacts/q110qoyq_1758485323492.png",
-  resumeUrl: "https://drive.google.com/file/d/1WUZ7mblC6kpxEDweOO_nNPhiNwWz_AwG/view",
+  resumeUrl: "https://drive.google.com/file/d/1RjfHp_tOuE_AtjEWsLR5NszeDI1VxnU8/view",
   bio: "Machine Learning Engineer with 3+ years of experience designing and delivering cloud-native AI/ML solutions. Passionate about LLM Inference optimization and building production-grade Generative AI applications. AWS Certified Solutions Architect with a proven track record of transforming proof-of-concepts into impactful client solutions."
 };
 
@@ -24,9 +24,8 @@ export const experienceData = [
     period: "Oct 2024 - Present",
     type: "current",
     highlights: [
-      "Collaborating with cross-functional teams to manage and deliver technology projects aligned with university strategic goals",
-      "Serving as internal SME for migrating IT service tools from FootPrints to TeamDynamix, affecting 80+ IT staff",
-      "Significantly improving workflow visibility and tracking across departments"
+      "Collaborated with cross-functional teams to manage and deliver technology projects aligned with university strategic goals, ensuring project visibility and successful implementation.",
+      "Led migration from FootPrints to TeamDynamix platform, enabling self-service IT request submission for 20,000+ students and faculty while configuring 3 workflow automation systems that replaced email-based processes with centralized dashboards—modernizing service delivery for 80+ IT staff."
     ]
   },
   {
@@ -38,10 +37,10 @@ export const experienceData = [
     period: "May 2023 - July 2024",
     type: "past",
     highlights: [
-      "Architected RAG pipeline reducing manual underwriting processes by 75% for credit underwriting workflow",
-      "Implemented OpenSearch Serverless vector DB with Titan embeddings for fast retrieval of structured client data",
-      "Designed few-shot prompt templates improving accuracy for complex financial notations",
-      "Engineered preprocessing pipelines using Pandas for robust and scalable ingestion of tabular financial data"
+      "Architected end-to-end Retrieval-Augmented Generation (RAG) pipeline that automated credit memo generation from financial documents, reducing underwriting time by 75% for Accenture’s banking clients.",
+      "Deployed OpenSearch vector database with Titan embeddings to enable sub-second retrieval from complex financial documents, processing 200+ page reports into queryable insights for credit committee decision-making.",
+      "Engineered few-shot prompt templates with domain-specific examples, achieving compliance-ready credit memo generation with accurate financial notation including bracketed negatives and industry-standard formatting.",
+      "Built robust ETL pipelines in Pandas for preprocessing financial data, implementing data quality checks and chunking strategies that maintained 99%+ accuracy in extracting structured data from diverse financial statements."
     ]
   },
   {
@@ -53,9 +52,9 @@ export const experienceData = [
     period: "Aug 2022 - Jan 2024",
     type: "past",
     highlights: [
-      "Deployed SageMaker Autopilot pipelines in secure VPC environments, supporting scalable API-based inference for enterprise clients",
-      "Implemented real-time model drift detection via SageMaker Model Monitor, enabling proactive model retraining strategies",
-      "Automated migration of QuickSight Dashboards across AWS accounts, preserving dataset integrity and improving reporting for analytics stakeholders"
+      "Engineered an end-to-end ML automation platform using CloudFormation templates that deploys SageMaker Autopilot pipelines in isolated VPC environments, automatically generating scalable API endpoints from user-uploaded S3 datasets without manual intervention.",
+      "Implemented real-time data and model quality monitoring via SageMaker Model Monitor, detecting drift by comparing live inference data against baseline statistics from ground truth datasets.",
+      "Built end-to-end QuickSight migration platform with web UI for CloudFormation deployment and RESTful API for automated cross-region dashboard transfers, reducing migration time from hours to minutes."
     ]
   }
 ];
@@ -66,11 +65,11 @@ export const projectsData = [
     title: "LLM Inference Acceleration Research",
     description: "Researched a hybrid approach combining quantization and speculative decoding to achieve speedup in LLM inference while maintaining accuracy.",
     details: [
-      "Conducted comparative analysis across short-prompt and long-context workloads",
-      "Addressed real-world deployment challenges in latency, memory, and cost optimization",
-      "Validated synergies between draft-verify parallelization and low-precision computation"
+      "Conducted systematic review of 22 research papers on LLM inference acceleration, comparing quantization and speculative decoding techniques across performance metrics (speed, memory, accuracy) to identify optimal optimization strategies.",
+      "Identified that hybrid approaches combining both techniques achieve 2.6× speedup and 45% memory reduction while maintaining 99% accuracy outperforming individual methods by addressing complementary bottlenecks.",
+      "Determined synergistic mechanism: quantization frees memory enabling deeper speculation, while draft-verify correction preserves accuracy despite compression—findings validated by production deployments at Google and IBM."
     ],
-    technologies: ["PyTorch", "CUDA", "Quantization", "Speculative Decoding"],
+    technologies: ["Quantization", "Speculative Decoding"],
     category: "Research"
   },
   {
@@ -156,7 +155,7 @@ export const educationData = [
     location: "Houston, TX",
     period: "Aug 2024 - May 2026",
     gpa: "3.8/4.0",
-    specializations: ["Machine Learning", "Generative AI", "Advanced Operating Systems"]
+    specializations: ["Machine Learning", "Generative AI", "Image Processing"]
   },
   {
     id: 2,
